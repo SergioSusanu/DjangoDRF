@@ -15,7 +15,7 @@ class BookList(APIView):
         author = request.GET.get('author')
         if (author):
             return Response({'author':author},status.HTTP_200_OK)
-        return Response({'msg':'from class get'},
+        return Response({'msg':'from class get2'},
                         status.HTTP_200_OK)
 
     def post(self,request):
@@ -30,5 +30,5 @@ class Book(APIView):
         return Response({'book id':str(pk)}, status.HTTP_200_OK)
 
     def put(self, request, pk):
-        return Response({'id and title':str(pk) + request.data.get('title'),
+        return Response({'id and titled':str(pk) + request.data.get('title'),
                          },status.HTTP_200_OK)
